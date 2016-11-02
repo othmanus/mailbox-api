@@ -15,8 +15,9 @@ git clone https://github.com/othmanus/mailbox-api.git
 ```
 
 And then update with composer
-̀```
-composer.phar update
+
+```
+composer update
 ```
 
 ### Import messages from a JSON file
