@@ -10,22 +10,22 @@ I choosed [Laravel framework](http://laravel.com/docs) for this task, because of
 
 ### Installation
 To install the app, first clone the repo
-`̀ `
+```
 git clone https://github.com/othmanus/mailbox-api.git
-`̀ `
+```
 
-And then update with `composer`
-̀`̀ `
+And then update with composer
+̀```
 composer.phar update
-`̀ `
+```
 
 ### Import messages from a JSON file
 First, you need to create the table and change the configurations in `.env` file at the root of the project.
 
 Then, go to the command line and type the following command:
-`̀ `
+```
 php artisan migrate --seed
-`̀ `
+```
 The command will create the `messages` table and import the json file to seed it.
 
 The `messages` contains the following attributes:
@@ -47,9 +47,10 @@ To import the json file, I first pasted a copy of it in `./storage/app/messages_
 And then, I created a Seeder (`./database/seeds/MessagesTableSeeder.php`), in which we read the json file and import the content into the database.
 
 To run the app, use the following command:
-`̀ `
+```
 php artisan serve
-`̀ `
+```
+
 It should be running on `http://localhost:8000`
 
 ### Message API
@@ -57,12 +58,12 @@ Using the `./app/Message.php` model, which contains all the previous attributes,
 
 All the routes are listed in `./routes/api.php` which is protected by a middleware by default.
 The routes are:
-`̀ `
+```
 - /api/messages : list of all messages
 - /api/messages/archived : list of all archived messages
 - /api/messages/{id} : show a message
 - /api/messages/{id}/read : read a message
 - /api/messages/{id}/archive : archive a message
-`̀ `
+```
 
 All the actions are routed to the controller `./app/Http/Controllers/Api/MessagesController.php`.
