@@ -1,18 +1,22 @@
-# Oberlo Backend Task - Mailbox API
+# Mailbox API
 
 ## Description
 A local firm is building a small E-mail client to manage their internal messaging.
-You have been asked to provide a simple prototype for a basic mailbox API in which the provided
-messages are listed. Each message can be marked as read and you can archive single messages.
+You have been asked to provide a simple prototype for a basic mailbox API in which the provided messages are listed. Each message can be marked as read and you can archive single messages.
 
 ## Solution
 ### Used technology
 I choosed [Laravel framework](http://laravel.com/docs) for this task, because of its simplicity and its powerful RESTful API handler.
 
 ### Installation
-To install the app, simply use `composer`
+To install the app, first clone the repo
+`̀ `
+git clone https://github.com/othmanus/mailbox-api.git
+`̀ `
+
+And then update with `composer`
 ̀`̀ `
-composer.phar install
+composer.phar update
 `̀ `
 
 ### Import messages from a JSON file
@@ -43,9 +47,9 @@ To import the json file, I first pasted a copy of it in `./storage/app/messages_
 And then, I created a Seeder (`./database/seeds/MessagesTableSeeder.php`), in which we read the json file and import the content into the database.
 
 To run the app, use the following command:
-``̀
+`̀ `
 php artisan serve
-```
+`̀ `
 It should be running on `http://localhost:8000`
 
 ### Message API
@@ -59,6 +63,6 @@ The routes are:
 - /api/messages/{id} : show a message
 - /api/messages/{id}/read : read a message
 - /api/messages/{id}/archive : archive a message
-```
+`̀ `
 
 All the actions are routed to the controller `./app/Http/Controllers/Api/MessagesController.php`.
